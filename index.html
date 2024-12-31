@@ -9,11 +9,11 @@
 </head>
 <body>
 
+    <!-- Embedded iframe for persistent audio -->
     <iframe 
         src="audio.html" 
         style="display:none;" 
-        id="audioFrame"></iframe> <!-- Embedded iframe for persistent audio -->
-    
+        id="audioFrame"></iframe>
 
     <video autoplay muted loop id="bgVideo">
         <source src="4a4b8264b2150b3eaaf04a18a75e9b20.mp4" type="video/mp4">
@@ -32,24 +32,37 @@
         </a>
     </div>
 
-    <div  style="text-align: center; margin-top: 20vh;">
+    <div style="text-align: center; margin-top: 20vh;">
         <div id="HNY"><h1>Happy New Year!</h1></div>
-        <div id="2k25" ><h1>2K25</h1></div>
-        <div id="msg"><p>May this year bring you new adventures, endless opportunities, and boundless joy. As we step into 2025, let's leave behind what weighs us down and embrace the limitless potential that lies ahead. Wishing you health, success, and happiness in every moment of the coming year!</p></div>
+        <div id="2k25"><h1>2K25</h1></div>
+        <div id="msg">
+            <p>May this year bring you new adventures, endless opportunities, and boundless joy. As we step into 2025, let's leave behind what weighs us down and embrace the limitless potential that lies ahead. Wishing you health, success, and happiness in every moment of the coming year!</p>
+        </div>
+        
+        <!-- Play Button for Audio -->
+        <button id="playAudioBtn" style="display:block; margin: 20px auto; padding: 10px 20px; font-size: 16px;
+        z-index: 1000; position: relative;">
+            Play Audio
+        </button>
     </div>
 
     <script>
-        // Play audio after iframe loads
-        window.addEventListener('load', () => {
-            const iframe = document.getElementById('audioFrame');
-            const audio = iframe.contentWindow.document.getElementById('bgAudio');
-            
-            // Check if audio is found inside iframe and play it
-            if (audio) {
-                audio.play().catch(error => {
-                    console.error("Error playing audio:", error);
-                });
-            }
+        // Get the play button and iframe for audio
+        const playAudioBtn = document.getElementById('playAudioBtn');
+        const audioFrame = document.getElementById('audioFrame');
+        
+        // Show the button on page load, as autoplay won't work directly due to browser policies
+        playAudioBtn.style.display = 'block';
+
+        // Play the audio when the button is clicked
+        playAudioBtn.addEventListener('click', () => {
+            // Access the iframe's content and trigger audio play
+            const iframeAudio = audioFrame.contentWindow.document.getElementById('bgAudio');
+            iframeAudio.play(); // Start the audio
+            iframeAudio.muted = false; // Unmute the audio
+
+            // Hide the play button once audio starts
+            playAudioBtn.style.display = 'none';
         });
     </script>
 
