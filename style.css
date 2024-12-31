@@ -47,6 +47,7 @@ body {
     line-height: 0.70em;       /* Adjust line height */
     outline: none;             /* Remove the default outline */
     animation: animate 2s linear infinite; /* Add animation */
+    font-family: 'Courier New', Courier, monospace;
 }
 #HNY:hover {
     animation-play-state: paused; /* Pause the animation on hover */
