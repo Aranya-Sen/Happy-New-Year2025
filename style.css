@@ -204,9 +204,9 @@ body {
 }
 
 /* For large desktops (min-width: 1200px) */
-@media only screen and (min-width: 1200px) {
+/*@media only screen and (min-width: 1200px) {
     #HNY, #2k25, #msg {
-        font-size: 4em;  /* Increase font size for larger screens */
+        font-size: 4em;  /* Increase font size for larger screens 
     }
 
     #msg {
@@ -223,4 +223,4 @@ body {
         font-size: 5em;
         top: 50%;
     }
-}
+}*/
