@@ -11,10 +11,14 @@
         Your browser does not support the audio tag.
     </audio>
 
+    <!-- Hidden button to simulate user interaction -->
+    <button id="startAudioBtn" style="display:none;">Start Audio</button>
+
     <script>
         const bgAudio = document.getElementById('bgAudio');
+        const startAudioBtn = document.getElementById('startAudioBtn');
 
-        // Set volume to 20%
+        // Set volume to 15%
         bgAudio.volume = 0.15;
 
         // Ensure audio plays immediately after page load
@@ -23,6 +27,10 @@
             setTimeout(() => {
             bgAudio.muted = false; // Unmute the audio after 1 second
         }, 1000);
+        });
+
+        startAudioBtn.addEventListener('click', () => {
+        bgAudio.muted = false;  // Unmute the audio after button click
         });
 
         // Check if there's a saved time in localStorage
