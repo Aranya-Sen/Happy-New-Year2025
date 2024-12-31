@@ -1,0 +1,198 @@
+/* Set background to black */
+body {
+    /*background-color: black;*/
+    color: white; /* Make all text white */
+    font-family: Arial, sans-serif; /* Use a readable sans-serif font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Ensure full viewport height */
+    /*background: url('time\ princess.jpeg') no-repeat center center fixed; /* Anime page background */
+    /*background-size: cover; /* Make sure it covers the entire screen */
+    font-family: 'Playfair Display', sans-serif;
+
+}
+
+/* Center the main heading (h1) */
+h1 {
+    text-align: center;
+    font-size: 5vw; /* Relative font size based on viewport width */
+    margin-top: 2vh; /* Margin relative to viewport height */
+    font-weight: bold;
+    text-shadow: 0 0.2em 0.5em rgba(255, 255, 255, 0.8); /* Fine white shadow */
+}
+
+/* Center the subheading */
+h2 {
+    text-align: center;
+    font-size: 2.5vw; /* Relative font size based on viewport width */
+    margin-top: 1vh; /* Margin relative to viewport height */
+    text-shadow: 0 0.2em 0.5em rgba(255, 255, 255, 0.8); /* Fine white shadow */
+}
+
+/* Style the movie list */
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin-top: 5vh; /* Margin relative to viewport height */
+    width: 100%;
+}
+
+/* Style each movie item */
+li {
+    margin: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 25vw; /* Max width relative to viewport width */
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Adjust the size of the movie posters */
+li img {
+    width: 100%; /* Make images fill up to their container's width */
+    height: auto;
+    max-width: 20vw; /* Limit image width relative to viewport width */
+}
+
+li img:hover {
+    box-shadow: 0 0 1em rgba(255, 255, 255, 0.8); /* Fine white shadow */
+}
+
+/* Style the movie titles */
+li span {
+    font-size: 2.5vw; /* Set movie title size relative to viewport width */
+    font-weight: bold;
+    margin-top: 1vh; /* Margin relative to viewport height */
+    word-wrap: break-word; /* Break long movie titles into multiple lines if necessary */
+    text-align: center;
+    width: 100%; /* Ensure it takes up full width */
+    transition: font-size 0.3s ease; /* Smoothly transition font size */
+}
+
+li span:hover {
+    text-shadow: 0 0.4em 1em rgb(255, 255, 255); /* Stronger white shadow on hover */
+    /*font-size: 3vw; /* Increase font size on hover */
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Make sure the page doesn't overflow vertically */
+body {
+    overflow-y: auto;
+}
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Media Queries for different screen sizes */
+
+/* For tablets and smaller screens (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    body {
+        overflow-y: scroll; /* Enable vertical scrolling */
+    }
+
+    h1 {
+        font-size: 8vw; /* Adjust heading size for smaller screens */
+    }
+
+    h2 {
+        font-size: 4vw; /* Adjust subheading size */
+    }
+
+    ul {
+        flex-direction: column; /* Stack movie items vertically */
+        margin-top: 3vh;
+    }
+
+    li {
+        margin: 4vw;
+        max-width: 40vw; /* Adjust item width for tablets */
+    }
+
+    li img {
+        max-width: 40vw; /* Adjust image size for better visibility */
+    }
+
+    li span {
+        font-size: 4vw; /* Adjust title size for tablets */
+    }
+}
+
+/* For smartphones (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+    body {
+        overflow-y: scroll; /* Enable vertical scrolling */
+    }
+
+    h1 {
+        font-size: 10vw; /* Adjust heading size for small screens */
+    }
+
+    h2 {
+        font-size: 5vw; /* Adjust subheading size */
+    }
+
+    ul {
+        flex-direction: column; /* Stack movie items vertically */
+        margin-top: 3vh;
+    }
+
+    li {
+        margin: 6vw;
+        max-width: 70vw; /* Adjust item width for mobile screens */
+    }
+
+    li img {
+        max-width: 60vw; /* Adjust image size for better visibility */
+    }
+
+    li span {
+        font-size: 6vw; /* Adjust title size for mobile */
+    }
+}
+
+/* For larger screens (min-width: 1200px) */
+@media only screen and (min-width: 1200px) {
+    h1 {
+        font-size: 4vw; /* Adjust heading size for large screens */
+    }
+
+    h2 {
+        font-size: 2vw; /* Adjust subheading size */
+    }
+
+    ul {
+        flex-direction: row; /* Arrange movie items in a row */
+        margin-top: 5vh;
+    }
+
+    li {
+        margin: 2vw;
+        max-width: 25vw; /* Maintain standard width for desktop */
+    }
+
+    li img {
+        max-width: 20vw; /* Maintain image size for large screens */
+    }
+
+    li span {
+        font-size: 2.5vw; /* Maintain title size for large screens */
+    }
+}

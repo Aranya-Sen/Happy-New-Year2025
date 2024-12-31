@@ -1,0 +1,226 @@
+body { 
+    margin: 0; 
+    padding: 0; 
+    position: relative;        /* Position the elements relative to the viewport */
+    height: 100vh;
+    /*background-image: url('istockphoto2.jpg'); /* Path to your image file */
+    /*background-size: cover; /* Make sure the image covers the entire page */
+    /*background-position: center center; /* Position the image at the center */
+    /*background-repeat: no-repeat; /* Prevent the image from repeating */
+    /*filter: brightness(0.3); /* Reduce the brightness of the image */
+    color: #4FC3F7 !important; /* Set the text color */
+    overflow: hidden; /* Prevent scrolling */
+    font-family: 'Happy New Year', sans-serif; /* Set the font family */
+}
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+#bgAudio {
+    display: none; /* Hides the audio player from view */
+}
+
+#HNY, #2k25, #msg {
+    position: fixed;        /* Position the elements relative to the viewport */
+    left: 50%;                 /* Center horizontally relative to the viewport */
+    transform: translateX(-50%); /* Center based on content width */
+    text-align: center;        /* Center the text inside the div */
+    white-space: nowrap;       /* Prevent text wrapping */
+    margin: 0;                  /* Remove default margins */
+    padding: 0;                 /* Remove default padding */
+    line-height: 1.2;           /* Ensure consistent line-height */
+    font-size: 3em;            /* Set the font size */
+}
+#HNY {
+    font-size: 3em;            /* Set the font size */
+    top: 50%;                  /* Position the element */
+    width: 100%;               /* Set the width to 100% */
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004); /* Add reflection effect */
+    line-height: 0.70em;       /* Adjust line height */
+    outline: none;             /* Remove the default outline */
+    animation: animate 2s linear infinite; /* Add animation */
+}
+#HNY:hover {
+    animation-play-state: paused; /* Pause the animation on hover */
+    font-size: 5em;
+    color: #4FC3F7; /* Set the color */
+}
+#2k25 {
+    font-size: 5em;            /* Set the font size */
+    top: 25%;                  /* Position the element */
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004); /* Add reflection effect */
+    line-height: 0.70em;       /* Adjust line height */
+    outline: none;             /* Remove the default outline */
+    animation: animate 5s linear infinite; /* Add animation */
+    z-index: 100;              /* Set the z-index */
+}
+
+#2k25:hover {
+    animation-play-state: paused; /* Pause the animation on hover */
+    font-size: 20%; /* Add a larger size on hover */
+    color: #4FC3F7; /* Add hover-specific color */
+}
+@keyframes animate {
+    0%,18%,20%,50%,60%,65%,80%,90%,92% {
+        color: #4FC3F7; /* Set the color */
+        text-shadow: none;
+    }
+    18.1%,20.1%,50.1%,60.1%,65.1%,80.1%,90.1%,92.1%,100% {
+        color: #dce5e6; /* Set the color */
+        text-shadow: 0 0 10px #03bcf4,
+                     0 0 20px #03bcf4, 
+                     0 0 40px #03bcf4, 
+                     0 0 80px #03bcf4,
+                     0 0 160px #03bcf4,  /* Add shadow effect */
+    }
+    
+}
+#msg {
+    font-size: 2em;          /* Set the font size */
+    position: absolute;
+    top: 28%;                     /* Position 80% from the top */
+    left: 50%;                    /* Center horizontally */
+    transform: translateX(-50%);  /* Center the element based on its width */
+    width: auto;                  /* Let the width adjust to content */
+    max-width: 80%;               /* Restrict width to 80% of the screen */
+    padding: 1em 2em;             /* Add space inside (1em top/bottom, 2em left/right) */
+    box-sizing: border-box;       /* Include padding in width calculation */
+    text-align: center;           /* Center-align the text */
+    white-space: normal;          /* Allow text wrapping */
+}
+
+#topBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+    padding: 1em 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000;
+}
+
+#topBar a {
+    text-decoration: none; /* Remove underline from links */
+}
+
+#topBar button {
+    background-color: #4FC3F7; /* Button background color */
+    color: white;             /* Button text color */
+    border: none;             /* Remove default border */
+    padding: 10px 20px;       /* Add padding for a button look */
+    font-size: 1em;           /* Text size */
+    cursor: pointer;          /* Change cursor to pointer on hover */
+    border-radius: 5px;       /* Add rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#topBar button:hover {
+    background-color: #0277BD; /* Darker blue on hover */
+}
+
+/* Media Queries for different screen sizes */
+
+/* For tablets and smaller screens (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    body {
+        overflow-y: scroll; /* Enable vertical scrolling */
+    }
+
+    #HNY, #2k25, #msg {
+        font-size: 2.5em;  /* Reduce font size */
+    }
+
+    #msg {
+        font-size: 1.5em;
+        top: 30%;
+    }
+
+    #2k25 {
+        font-size: 3.5em;
+        top: 35%;
+    }
+
+    #HNY {
+        font-size: 2.5em;
+        top: 55%;
+    }
+
+    #topBar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em 0;
+    }
+
+    #topBar button {
+        font-size: 0.9em;  /* Slightly smaller button text */
+        padding: 8px 16px;
+    }
+}
+
+/* For smartphones (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+    body {
+        overflow-y: scroll; /* Enable vertical scrolling */
+    }
+
+    #HNY, #2k25, #msg {
+        font-size: 1.8em;  /* Further reduce font size */
+    }
+
+    #msg {
+        font-size: 1.2em;
+        top: 35%;
+    }
+
+    #2k25 {
+        font-size: 3em;
+        top: 40%;
+    }
+
+    #HNY {
+        font-size: 2em;
+        top: 60%;
+    }
+
+    #topBar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em 0;
+    }
+
+    #topBar button {
+        font-size: 0.8em;  /* Further reduce button text */
+        padding: 7px 14px;
+    }
+}
+
+/* For large desktops (min-width: 1200px) */
+@media only screen and (min-width: 1200px) {
+    #HNY, #2k25, #msg {
+        font-size: 4em;  /* Increase font size for larger screens */
+    }
+
+    #msg {
+        font-size: 2.5em;
+        top: 25%;
+    }
+
+    #2k25 {
+        font-size: 6em;
+        top: 20%;
+    }
+
+    #HNY {
+        font-size: 5em;
+        top: 50%;
+    }
+}

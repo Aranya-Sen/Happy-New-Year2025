@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+</head>
+<body>
+    <audio id="bgAudio" autoplay loop>
+        <source src="New Year Song with Lyrics Official Happy New Years Song Lyrics [TubeRipper.com]-[AudioTrimmer.com].mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        const bgAudio = document.getElementById('bgAudio');
+
+        // Set volume to 20%
+        bgAudio.volume = 0.15;
+
+        // Ensure audio plays immediately after page load
+        window.addEventListener('load', () => {
+            bgAudio.play(); // Play the audio as soon as the page loads
+        });
+
+        // Check if there's a saved time in localStorage
+        const savedTime = sessionStorage.getItem('audioTime');
+        if (savedTime) {
+            bgAudio.currentTime = savedTime; // Resume from saved time
+            bgAudio.play(); // Play the audio immediately after setting time
+        } else {
+            bgAudio.currentTime = 0; // Start from the beginning if no saved time
+            bgAudio.play(); // Start from the beginning if no saved time
+        }
+
+        // Store the audio playback position when it changes
+        bgAudio.addEventListener('timeupdate', () => {
+            localStorage.setItem('audioTime', bgAudio.currentTime);
+        });
+
+        // Handle visibility changes (tab switching)
+        document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+                bgAudio.pause(); // Pause the music when the tab is not active
+            } else {
+                bgAudio.play(); // Resume the music when the tab becomes active
+            }
+        });
+    </script>
+</body>
+</html>
