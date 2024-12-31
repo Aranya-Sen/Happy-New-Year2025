@@ -26,7 +26,7 @@ body {
 }
 
 #HNY, #2k25, #msg {
-    position: fixed;        /* Position the elements relative to the viewport */
+    position: relative;        /* Position the elements relative to the viewport */
     left: 50%;                 /* Center horizontally relative to the viewport */
     transform: translateX(-50%); /* Center based on content width */
     text-align: center;        /* Center the text inside the div */
@@ -35,8 +35,11 @@ body {
     padding: 0;                 /* Remove default padding */
     line-height: 1.2;           /* Ensure consistent line-height */
     font-size: 3em;            /* Set the font size */
+    display: block; /* Ensure they stack */
+
 }
 #HNY {
+    margin-bottom: 0.5em; /* Add spacing between elements */
     font-size: 3em;            /* Set the font size */
     top: 50%;                  /* Position the element */
     width: 100%;               /* Set the width to 100% */
@@ -52,6 +55,7 @@ body {
 }
 #2k25 {
     font-size: 5em;            /* Set the font size */
+    margin-bottom: 2.5em; /* Add spacing between elements */
     top: 25%;                  /* Position the element */
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0004); /* Add reflection effect */
     line-height: 0.70em;       /* Adjust line height */
@@ -142,16 +146,19 @@ body {
     #msg {
         font-size: 1.5em;
         top: 30%;
+        margin-top: 1em;
     }
 
     #2k25 {
         font-size: 3.5em;
         top: 35%;
+        margin-bottom: 0.8em;
     }
 
     #HNY {
         font-size: 2.5em;
         top: 55%;
+        margin-bottom: 0.3em;
     }
 
     #topBar {
@@ -179,16 +186,19 @@ body {
     #msg {
         font-size: 1.2em;
         top: 35%;
+        margin-top: 0.5em;
     }
 
     #2k25 {
         font-size: 3em;
         top: 40%;
+        margin-bottom: 0.5em;
     }
 
     #HNY {
         font-size: 2em;
         top: 60%;
+        margin-bottom: 0.2em;
     }
 
     #topBar {
@@ -203,8 +213,8 @@ body {
     }
 }
 
-/* For large desktops (min-width: 1200px) */
-/*@media only screen and (min-width: 1200px) {
+/* For large desktops (min-width: 1200px) 
+@media only screen and (min-width: 1200px) {
     #HNY, #2k25, #msg {
         font-size: 4em;  /* Increase font size for larger screens 
     }
