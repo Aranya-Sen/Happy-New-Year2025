@@ -12,23 +12,27 @@
     </audio>
 
     <!-- Hidden button to simulate user interaction -->
-    <button id="startAudioBtn">Start Audio</button>
+    <button id="startAudioBtn" style="display:none;">Start Audio</button>
 
     <script>
         const bgAudio = document.getElementById('bgAudio');
         const startAudioBtn = document.getElementById('startAudioBtn');
 
-        // Set volume to 15%
+        // Set volume to 20%
         bgAudio.volume = 0.15;
 
-        // Ensure audio plays immediately after page load
+        // Try to play the audio as soon as the page loads
         window.addEventListener('load', () => {
-            bgAudio.play(); // Play the audio as soon as the page loads
-            setTimeout(() => {
-            bgAudio.muted = false; // Unmute the audio after 1 second
-        }, 1000);
-        });
+            bgAudio.play().catch((error) => {
+                console.error("Autoplay blocked: ", error);
+            });
 
+            // Simulate user interaction by clicking the hidden button
+            setTimeout(() => {
+                startAudioBtn.click();
+            }, 1000);  // Slight delay to simulate loading
+        });
+        
         startAudioBtn.addEventListener('click', () => {
         bgAudio.muted = false;  // Unmute the audio after button click
         });
