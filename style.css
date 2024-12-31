@@ -47,7 +47,6 @@ body {
     line-height: 0.70em;       /* Adjust line height */
     outline: none;             /* Remove the default outline */
     animation: animate 2s linear infinite; /* Add animation */
-    font-family: 'Courier New', Courier, monospace;
 }
 #HNY:hover {
     animation-play-state: paused; /* Pause the animation on hover */
@@ -160,6 +159,7 @@ body {
         font-size: 2.5em;
         top: 55%;
         margin-bottom: 0.3em;
+        font-family: 'Courier New', Courier, monospace;
     }
 
     #topBar {
@@ -200,6 +200,7 @@ body {
         font-size: 2em;
         top: 60%;
         margin-bottom: 0.2em;
+        font-family: 'Courier New', Courier, monospace;
     }
 
     #topBar {
